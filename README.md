@@ -4,5 +4,5 @@
 
 ## Made with my mentor at [Bloc](http://bloc.io).
 
-## Find it at [jamaleh-bloccit](https://git.heroku.com/jamaleh-bloccit.git)
+## Find it at [jamaleh-bloccit](https://jamaleh-bloccit.herokuapp.com/)
 
