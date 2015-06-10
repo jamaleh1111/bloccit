@@ -26,6 +26,14 @@ comment = Comment.where(body: "Some long body here").first
 unless comment
   Comment.create(body: "Some long body here")
 end 
+
+10.times do
+  Advertisement.create!(
+    title: Faker::Internet.domain_name,
+    copy: Faker::Company.catch_phrase,
+    price: 0
+  )
+end 
  
 puts "Seed finished"
 puts "#{Post.count} posts created"
