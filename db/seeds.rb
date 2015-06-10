@@ -18,8 +18,14 @@ end
 post = Post.where(title: "My special title").first 
 
 unless post
-  Post.create(title: "My special title", body: "Some long body here")
+  Post.create(title: "My special title")
 end
+
+comment = Comment.where(body: "Some long body here").first
+
+unless comment
+  Comment.create(body: "Some long body here")
+end 
  
 puts "Seed finished"
 puts "#{Post.count} posts created"
