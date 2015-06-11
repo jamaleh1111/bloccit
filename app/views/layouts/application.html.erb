@@ -9,11 +9,13 @@
   </head>
   <body>
     <div class="container">
-      <ul class="nav nav-tabs">
-        <li><%= link_to "Bloccit", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
+      <ul> 
+        <div class="nav nav-tabs">
+         <li><%= link_to "Bloccit", root_path %></li>
+         <li><%= link_to "About", about_path %></li>
+        </div> 
       <ul>
-    </div>
+    
 
       <% if flash[:notice] %>
         <div class="alert alert-success">
@@ -33,6 +35,7 @@
       <% end %>
     
       <%= yield %>
+    </div>
 
   </body>
 </html>
