@@ -1,3 +1,9 @@
 class Post < ActiveRecord::Base
   has_many :comments
-end
+
+
+  def title
+    raise
+  end 
+end 
+
