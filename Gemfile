@@ -53,3 +53,4 @@ end
 gem 'bootstrap-sass'
 gem 'pry-rails'
 gem 'faker'
+gem 'devise'
