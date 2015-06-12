@@ -27,13 +27,10 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question = Post.find(params[:id])
+    @question = Question.find(params[:id])
     if @question.update_attributes(params.require(:question).permit(:title, :body))
       flash[:notice] = "Question was updated."
       redirect_to @question
-    elsif  
-      @question.resolved
-      flash[:notice] = "This question has been resolved!"  
     else
       flash[:error] = "There was an error saving the question. Please try again."
       render :edit
@@ -42,6 +39,8 @@ class QuestionsController < ApplicationController
 
   def resolved
     @question = Question.check_box
+    flash[:notice] = "This question has been resolved!"  
+
   end
 
   def destroy
