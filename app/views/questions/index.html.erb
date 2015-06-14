@@ -4,6 +4,9 @@
     <div class="media-body">
       <h4 class="media-heading">
         <%= link_to question.title, question %>
+        <% if question.resolved %>
+          <small>Resolved</small>
+          <% end %>
       </h4>
     </div>
   </div>

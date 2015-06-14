@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(params.require(:question).permit(:title, :body))
+    @question = Question.new(params.require(:question).permit(:title, :body, :resolved))
     if @question.save
       flash[:notice] = "Question was saved."
       redirect_to @question
@@ -28,8 +28,8 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    if @question.update_attributes(params.require(:question).permit(:title, :body))
-      flash[:notice] = "Question was updated."
+    if @question.update_attributes(params.require(:question).permit(:title, :body, :resolved))
+      flash[:notice] = @question.resolved ? "This question has been solved!" : "Question was updated."
       redirect_to @question
     else
       flash[:error] = "There was an error saving the question. Please try again."
@@ -37,14 +37,15 @@ class QuestionsController < ApplicationController
     end 
   end
 
-  def resolved
-    @question = Question.check_box
-    flash[:notice] = "This question has been resolved!"  
-
-  end
-
   def destroy
-    @question = Question.delete
-    flash[:notice] = "The question was deleted."
+    @question = Question.find(params[:id])
+
+    if @question.destroy
+      flash[:notice] = "The question was deleted."
+      redirect_to questions_path
+    else
+      flash[:error] = "The questions could not be deleted. Please try again."
+      render :show
+    end
   end
 end
