@@ -1,20 +1,18 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
   devise_for :users
-  resources :posts
-=======
-  resources :posts, :questions
->>>>>>> a-35-crud
 
+  resources :posts 
+  resources :questions
   resources :advertisements
 
   get 'about' => 'welcome#about'
-<<<<<<< HEAD
+
   get 'advertisements' => 'welcome#about'
-=======
+
   get 'questions' => 'welcome#questions'
->>>>>>> a-35-crud
+
+  get 'contact' => 'welcome#contact'
 
   root to: 'welcome#index'
 end 
