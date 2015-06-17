@@ -54,8 +54,5 @@ gem 'bootstrap-sass'
 gem 'pry-rails'
 gem 'faker'
 gem 'devise'
-<<<<<<< HEAD
 gem 'figaro', '1.0'
-=======
 gem 'pundit'
->>>>>>> cp-39-authorization
