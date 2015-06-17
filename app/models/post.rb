@@ -2,5 +2,5 @@ class Post < ActiveRecord::Base
   has_many :comments
 
   scope :ordered_by_title, -> { order(:title) }
-  scope :ordered_by_reverse_created_at, -> { order(:created_at, :desc) }
+  scope :ordered_by_reverse_created_at, -> { order('created_at DESC') }
 end
