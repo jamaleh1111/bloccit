@@ -9,8 +9,14 @@ class PostPolicy < ApplicationPolicy
 
     def resolve
       if user.admin?
-        scope.all? { ||  }
-  def index?
-    true
+        scope.all
+      else 
+        scope.none
+      end 
+    end 
   end 
-end 
+
+    def index?
+      true
+    end 
+  end 
