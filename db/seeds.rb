@@ -25,10 +25,18 @@ topics = Topic.all
     user:   users.sample,
     topic:  topics.sample,
     title:  Faker::Lorem.sentence,
-    body:   Faker::Lorem.paragraph
+    body:   Faker::Lorem.paragraph,
+    summary: summary.sample
   )
 end
 posts = Post.all
+
+50.times do
+  Summary.create!(
+    description:  Faker::Lorem.paragraph
+  )
+end 
+summaries = Summary.all
  
 100.times do
   Comment.create!(
