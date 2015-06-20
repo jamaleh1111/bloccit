@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619020919) do
+ActiveRecord::Schema.define(version: 20150620011938) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "title"
@@ -20,17 +20,6 @@ ActiveRecord::Schema.define(version: 20150619020919) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "answers", force: :cascade do |t|
-    t.integer  "Question_id"
-    t.text     "body"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "question_id_id"
-  end
-
-  add_index "answers", ["Question_id"], name: "index_answers_on_Question_id"
-  add_index "answers", ["question_id_id"], name: "index_answers_on_question_id_id"
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -54,14 +43,6 @@ ActiveRecord::Schema.define(version: 20150619020919) do
   add_index "posts", ["summary_id"], name: "index_posts_on_summary_id"
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
-
-  create_table "questions", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.boolean  "resolved"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "summaries", force: :cascade do |t|
     t.datetime "created_at", null: false
