@@ -9,4 +9,18 @@ class Post < ActiveRecord::Base
   validates :body, length: { minimum: 20 }, presence: true
   validates :topic, presence: true
   validates :user, presence: true
+
+  def markdown_title
+    @post.markdown_title
+  end 
+
+  def markdown_body
+    @post.markdown_body
+  end 
+
+  private 
+
+  def render_as_markdown
+    markdown.require(:post).permit(:title, :body)
+  end 
 end
