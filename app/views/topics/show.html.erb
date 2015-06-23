@@ -19,6 +19,11 @@
             <%= post.user.name %><br>
             <%= post.comments.count %> Comments
           </small>
+          <small>
+            <%= image_tag(@post.image.profile.url) %>
+            submitted <%= time_ago_in_words(@post.created_at) %> ago by
+            <%= @post.user.name %>
+          </small>
         </div>
       </div>
     <% end %>
