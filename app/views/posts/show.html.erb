@@ -15,7 +15,7 @@
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
     <small>
-      <%= image_tag(@post.image.profile.url) %>
+      <%= image_tag(@post.user.image.large.url) %>
       submitted <%= time_ago_in_words(@post.created_at) %> ago by
       <%= @post.user.name %>
     </small>
