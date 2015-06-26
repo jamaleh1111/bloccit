@@ -1,14 +1,5 @@
-<!-- <p>
-  <strong>Comments</strong>
+<blockquote>
   <%= comment.body %>
-</p> -->
-    <% @comments.each do |comment| %>
-      <div class="media">
-        <div class="media-body">
-          <small>
-            submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br>
-            <%= post.comments.count %> Comments
-          </small>
-        </div>
-      </div>
-    <% end %>
+  <footer><%= User.find(comment.user_id).name %></footer>
+</blockquote>
+   
