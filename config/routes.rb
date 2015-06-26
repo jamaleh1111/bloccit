@@ -7,20 +7,14 @@ Rails.application.routes.draw do
   resources :advertisements
 
   resources :topics do
-    resources :posts, except: [:index] do
+    resources :posts, except: [:index] 
+  end 
+
+  resources :posts, only: [] do
       resources :comments, only: [:create, :destroy]
- end 
-end 
-  
-  get 'users' => 'users#update'
+  end 
 
   get 'about' => 'welcome#about'
-
-  get 'advertisements' => 'welcome#about'
-
-  get 'questions' => 'welcome#questions'
-
-  get 'contact' => 'welcome#contact'
 
   root to: 'welcome#index'
 end 
