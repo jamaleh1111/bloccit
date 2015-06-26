@@ -8,8 +8,6 @@ module ApplicationHelper
     end 
   end 
 
-
-
   def my_name
     my_name = "Jamaleh Gyulay"
   end 
