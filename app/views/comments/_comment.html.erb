@@ -1,4 +1,14 @@
-<p>
-  <strong>Comment</strong>
+<!-- <p>
+  <strong>Comments</strong>
   <%= comment.body %>
-</p>
+</p> -->
+    <% @comments.each do |comment| %>
+      <div class="media">
+        <div class="media-body">
+          <small>
+            submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br>
+            <%= post.comments.count %> Comments
+          </small>
+        </div>
+      </div>
+    <% end %>
