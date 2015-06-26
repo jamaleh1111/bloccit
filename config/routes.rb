@@ -12,15 +12,8 @@ Rails.application.routes.draw do
  end 
 end 
   
-  get 'users' => 'users#update'
 
   get 'about' => 'welcome#about'
-
-  get 'advertisements' => 'welcome#about'
-
-  get 'questions' => 'welcome#questions'
-
-  get 'contact' => 'welcome#contact'
 
   root to: 'welcome#index'
 end 
