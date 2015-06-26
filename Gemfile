@@ -57,6 +57,11 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development do
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end 
+
 gem 'bootstrap-sass'
 gem 'pry-rails'
 gem 'faker'
