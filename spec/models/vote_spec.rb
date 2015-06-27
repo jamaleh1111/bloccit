@@ -9,7 +9,7 @@ describe Vote do
         down_vote = Vote.new(value: -1)
         expect(down_vote.valid?).to eq(true)
     
-        invalid_vote = Vote.new(value: < 1)
+        invalid_vote = Vote.new(value: 2)
         expect(invalid_vote.valid?).to eq(false)
       end 
     end 
