@@ -1,9 +1,5 @@
 <h1><%= @post.markdown_title %></h1>
 
-<% if policy(@comment).create? %>
-  <%= link_to "Create comment", create_comment_topic_post_path(@post), class: 'btn btn-success' %> 
-<% end %>
-
 <div class="row">
   <div class="col-md-8">
 
@@ -12,7 +8,6 @@
       submitted <%= time_ago_in_words(@post.created_at) %> ago by 
       <%= @post.user.name %>
     <small>
-    <p><%= markdown_to_html @post.body %></p>
     
     <%= image_tag(@post.image.tiny.url) if @post.image? %>
     submited <%= time_ago_in_words(@post.created_at) %> ago by
@@ -31,5 +26,7 @@
 <%= render @comments %>
 
 <h2>Add a comment</h2>
-<%= render partial: 'comments/form', locals: {topic: @topic, post: @post} %>
+<% if policy(@comments).create? %>
+  <%= render partial: 'comments/form', locals: {topic: @topic, post: @post} %>
+<% end %>
 
