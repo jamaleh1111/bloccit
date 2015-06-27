@@ -4,7 +4,7 @@ class Topic < ActiveRecord::Base
 
 
   validates :name, length: { minimum: 5 }, presence: true
-end
+
 
   self.per_page = 50
 
