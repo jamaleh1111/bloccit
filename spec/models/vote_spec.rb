@@ -3,14 +3,14 @@ describe Vote do
     describe "value validations" do
       it "only allows -1 or 1 as values" do
         # your expectations here
-        upvote = Vote.new(v: 1)
-        expect(upvote.valid?).to eq(true)
+        up_vote = Vote.new(value: 1)
+        expect(up_vote.valid?).to eq(true)
       
-        downvote = Vote.new(v: -1)
-        expect(downvote.valid?).to eq(true)
+        down_vote = Vote.new(value: -1)
+        expect(down_vote.valid?).to eq(true)
     
-        invalidvote = Vote.new(v: < 1)
-        expect(invalidvote.valid?).to eq(false)
+        invalid_vote = Vote.new(value: < 1)
+        expect(invalid_vote.valid?).to eq(false)
       end 
     end 
   end 
