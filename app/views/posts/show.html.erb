@@ -13,7 +13,6 @@
     submited <%= time_ago_in_words(@post.created_at) %> ago by
     <%= @post.user.name %>
 
-    <p><%= @post.markdown_body %></p>
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
