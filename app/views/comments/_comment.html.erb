@@ -1,7 +1,3 @@
-<blockquote>
-  <%= comment.body %>
-  <footer><%= User.find(comment.user_id).name %></footer>
-</blockquote>
 <div class="media">
   <div class="media-left">
     <%= image_tag(comment.user.avatar.small.url, class: "media-object") if comment.user.avatar? %>

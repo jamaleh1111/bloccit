@@ -9,18 +9,14 @@ Rails.application.routes.draw do
   resources :topics do
     resources :posts, except: [:index] do
       resources :comments, only: [:create, :destroy]
- end 
-end 
+
+      post '/up-vote' => 'votes#up_vote', as: :up_vote
+      post '/down-vote' => 'votes#down_vote', as: :down_vote
+   
+    end 
+  end 
   
-  get 'users' => 'users#update'
-
   get 'about' => 'welcome#about'
-
-  get 'advertisements' => 'welcome#about'
-
-  get 'questions' => 'welcome#questions'
-
-  get 'contact' => 'welcome#contact'
 
   root to: 'welcome#index'
 end 
