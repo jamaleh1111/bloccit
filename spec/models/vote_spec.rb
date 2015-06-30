@@ -1,8 +1,10 @@
+require 'rails_helper'
+
 describe Vote do 
+  
   describe "validations" do
     describe "value validations" do
       it "only allows -1 or 1 as values" do
-        # your expectations here
         up_vote = Vote.new(value: 1)
         expect(up_vote.valid?).to eq(true)
       
