@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   resources :advertisements
 
   resources :topics do
-    resources :posts, except: [:index] do
+    resources :posts, except: [:index] 
+  end
+
+  resources :posts, only: [] do
       resources :comments, only: [:create, :destroy]
  end 
-end 
-  
 
   get 'about' => 'welcome#about'
 
