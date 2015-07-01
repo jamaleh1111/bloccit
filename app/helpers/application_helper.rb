@@ -13,11 +13,13 @@ module ApplicationHelper
   end 
 
   def up_vote_link_classes
-    "glyphicon glyphicon-chevron-up, #{(current_user.voted(post) && current_user.voted(post).up_vote?) ? 'voted' : '' }"
+    glyphicon glyphicon-chevron-up, 
+    up_vote = current_user.voted(post) && current_user.voted(post).up_vote? ? 'voted' : '' 
   end 
 
   def down_vote_link_classes
-    "glyphicon glyphicon-chevron-down, #{(current_user.voted(post) && current_user.voted(post).down_vote?) ? 'voted' : '' }"
+    glyphicon glyphicon-chevron-down, 
+    down_vote = current_user.voted(post) && current_user.voted(post).down_vote? ? 'voted' : '' 
   end 
   
 end
