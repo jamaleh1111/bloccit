@@ -14,10 +14,7 @@ describe "Visiting profiles" do
     @comment.save
   end 
 
-  describe "signed in" do 
-    before do
-      user = FactoryGirl.create(:user)
-      login_as(user, scope: :user)
+  describe "not signed in" do 
 
     it "shows profile" do 
       visit user_path(@user)
@@ -28,8 +25,11 @@ describe "Visiting profiles" do
       expect( page ).to have_content(@comment.body)
     end 
   end 
-end 
-  describe "not signed in" do 
+
+  describe "signed in" do 
+    before do
+      login_as(@user, scope: :user)
+    end 
 
     it "shows profile" do 
       visit user_path(@user)
