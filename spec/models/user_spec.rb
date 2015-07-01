@@ -8,7 +8,7 @@ describe User do
 
     before do
       @post = associated_post
-      @user = authenticated_user
+      @user = authenticated_user(email_favorites: true)
       #@other_user = authenticated_user
     end 
 
