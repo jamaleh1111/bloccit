@@ -77,8 +77,8 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'newrelic_rpm'
 
 
-gem 'puma' group: :production
-gem 'puma' group: :development
+gem 'puma', group: :production
+gem 'puma', group: :development
 
 
 
