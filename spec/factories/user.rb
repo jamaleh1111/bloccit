@@ -6,13 +6,19 @@ FactoryGirl.define do
     password_confirmation "helloworld"
     confirmed_at Time.now
   end 
- 
+end 
 
+ 
   factory :user do
     email 'test@example.com'
     password 'f4k3p455w0rd'
     user = FactoryGirl.create(:user)
     user.confirmed_at = Time.now
     user.save
-  end 
-end
+  
+    RSpec.configure do |config|
+      config.after :each do
+        Warden.test_reset!
+      end
+    end 
+  end
