@@ -5,4 +5,10 @@ FactoryGirl.define do
     user = FactoryGirl.create(:user)
     user.confirmed_at = Time.now
     user.save
+
+  RSpec.configure do |config|
+    config.after :each do
+      Warden.test_reset!
+    end
+  end 
 end
