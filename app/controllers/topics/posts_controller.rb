@@ -23,7 +23,7 @@ class Topics::PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = current_user.posts.build(post_params)
     @post.topic = @topic
-    @post = Post.new(params.require(:post).permit(:title, :body))
+    
     authorize @post 
     
     if @post.save
