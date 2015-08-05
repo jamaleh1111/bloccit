@@ -11,7 +11,7 @@
   <% end %>
   <%= form_group_tag(post.errors[:title]) do %>
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control', placeholder: "Enter post title" %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "Enter post title", id: 'send-title' %>
   <% end %>
   <%= form_group_tag(post.errors[:body]) do %>
     <%= f.label :body %>
@@ -23,6 +23,6 @@
     <%= f.hidden_field :image_cache %>
     
   <div class="form-group">
-    <%= f.submit "Save", class: 'btn btn-success' %>
+    <%= f.submit "Save", class: 'btn btn-success', id: 'commit-to-send' %>
   </div>
 <% end %>
