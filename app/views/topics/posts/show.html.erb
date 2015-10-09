@@ -3,14 +3,17 @@
     <%= render partial: 'votes/voter', locals: { post: @post } %>
     <h1><%= @post.markdown_title %></h1>
     <br >
+    <p><%= @post.markdown_body %></p>
+
+    
+    
+    <div class="img-responsive"><%= image_tag(@post.image.resized.url) if @post.image? %>
+    </div>
     <small>
       <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
       submitted <%= time_ago_in_words(@post.created_at) %> ago by 
       <%= @post.user.name %>
     </small>
-    
-    <div class="img-responsive"><%= image_tag(@post.image.resized.url) if @post.image? %></div>
-    <p><%= @post.markdown_body %></p>
   </div>
   <div class="col-md-6" style="margin-top:10px;">
     <% if policy(@post).edit? %>
