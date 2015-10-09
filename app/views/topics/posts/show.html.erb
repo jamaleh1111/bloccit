@@ -9,7 +9,7 @@
       <%= @post.user.name %>
     </small>
     
-    <div class='img-responsive'><%= image_tag(@post.image.tiny.url) if @post.image? %></div>
+    <div class="img-responsive"><%= image_tag(@post.image.thumb.url) if @post.image? %></div>
     <p><%= @post.markdown_body %></p>
   </div>
   <div class="col-md-6" style="margin-top:10px;">
